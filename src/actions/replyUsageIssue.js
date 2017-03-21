@@ -6,12 +6,14 @@ const comment = `
 
 function replyUsageIssue(on) {
   on('issues_labeled', (payload) => {
-    github.issues.createComment({
-      owner: payload.repository.owner.login,
-      repo: payload.repository.name,
-      number: payload.issue.number,
-      body: comment,
-    });
+    if (payload.label.name === 'Usage') {
+      github.issues.createComment({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.issue.number,
+        body: comment,
+      });
+    }
   });
 }
 
