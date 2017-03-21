@@ -1,8 +1,8 @@
-const format = require("string-template");
-const github = require('../github');
+const format = require('string-template');
+const { commentIssue, closeIssue } = require('../github');
 
 const comment = "\
-Hello @{sender}. We use GitHub issues to trace bugs or discuss \
+Hello @{user}. We use GitHub issues to trace bugs or discuss \
 plans of Ant Design. So, please don't ask usage questions here. You can try \
 to ask questions in [Stack Overflow](http://stackoverflow.com/questions/tagged/antd) \
 or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
@@ -11,23 +11,12 @@ or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
 function replyUsage(on) {
   on('issues_labeled', (payload) => {
     if (payload.label.name === 'Usage') {
-      const owner = payload.repository.owner.login;
-      const repo = payload.repository.name;
-      const number = payload.issue.number;
+      commentIssue(
+        payload,
+        format(comment, { user: payload.issue.user.login })
+      );
 
-      github.issues.createComment({
-        owner,
-        repo,
-        number,
-        body: format(comment, { sender: payload.sender.login }),
-      });
-
-      github.issues.edit({
-        owner,
-        repo,
-        number,
-        state: 'closed',
-      })
+      closeIssue(payload);
     }
   });
 }

@@ -1,2 +1,3 @@
 # rename this file to .env
 GITHUB_TOKEN=token
+GITHUB_BOT_NAME=botname

@@ -13,11 +13,13 @@ app.use(bodyParser());
 app.use(ctx => {
   let eventName = ctx.request.headers['x-github-event'];
   if (eventName) {
-    console.log(ctx.request.body);
-    const action = ctx.request.body.action;
+    const payload = ctx.request.body;
+    const action = payload.action;
     eventName += `_${action}`;
     console.log('receive event: ', eventName);
-    githubEvent.emit(eventName, ctx.request.body);
+    if (payload.sender.login !== process.env.GITHUB_BOT_NAME) {
+      githubEvent.emit(eventName, payload);
+    }
     ctx.body = 'Ok.';
   } else {
     ctx.body = 'Go away.';
