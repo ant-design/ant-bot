@@ -1,6 +1,7 @@
 const format = require("string-template");
+const github = require('../github');
 
-const comment = 'Hellp, @{sender}. Please provide a re-producible demo: http://codepen.io/benjycui/pen/KgPZrE?editors=001';
+const comment = 'Hellp @{sender}. Please provide a re-producible demo: http://codepen.io/benjycui/pen/KgPZrE?editors=001';
 
 function replyNeedDemoIssue(on) {
   on('issues_labeled', (payload) => {
