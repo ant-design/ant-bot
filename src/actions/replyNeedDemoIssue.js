@@ -4,7 +4,7 @@ const comment = 'Hellp, @{sender}. Please provide a re-producible demo: http://c
 
 function replyNeedDemoIssue(on) {
   on('issues_labeled', (payload) => {
-    if (payload.label.name === 'Usage') {
+    if (payload.label.name === 'Need Demo') {
       const owner = payload.repository.owner.login;
       const repo = payload.repository.name;
       const number = payload.issue.number;
