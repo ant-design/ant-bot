@@ -28,6 +28,6 @@ Object.keys(actions).forEach((key) => {
   actions[key](githubEvent.on.bind(githubEvent));
 });
 
-const port = process.env.NODE_ENT === 'production' ? 80 : 3000;
+const port = process.env.NODE_ENV === 'production' ? 80 : 3000;
 app.listen(port);
 console.log(`Listening on http://0.0.0.0:${port}`);
