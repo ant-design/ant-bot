@@ -3,9 +3,9 @@
 ## Development
 
 ```
-$ npm install
+$ yarn
 $ mv env .env
-$ npm run dev
+$ yarn dev
 ```
 
 ## Deploy to now
