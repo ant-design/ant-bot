@@ -1,3 +1,4 @@
+require('dotenv').config();
 const EventEmitter = require('events');
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
@@ -28,3 +29,4 @@ Object.keys(actions).forEach((key) => {
 
 const port = process.env.NODE_ENT === 'production' ? 80 : 3000;
 app.listen(port);
+console.log(`Listening on http://0.0.0.0:${port}`);
