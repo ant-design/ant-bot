@@ -4,7 +4,7 @@
 
 ```
 $ yarn
-$ mv env .env
+$ cp env .env
 $ yarn dev
 ```
 
