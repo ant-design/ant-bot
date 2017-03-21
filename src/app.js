@@ -13,6 +13,7 @@ app.use(bodyParser());
 app.use(ctx => {
   let eventName = ctx.request.headers['x-github-event'];
   if (eventName) {
+    console.log(ctx.request.body);
     const action = ctx.request.body.action;
     eventName += `_${action}`;
     console.log('receive event: ', eventName);

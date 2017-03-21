@@ -2,7 +2,7 @@
   "name": "ant-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,8 @@
     "github-api": "^3.0.0",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.1.0",
-    "require-dir": "^0.3.1"
+    "require-dir": "^0.3.1",
+    "string-template": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
