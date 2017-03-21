@@ -14,7 +14,6 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "github": "^9.2.0",
-    "github-api": "^3.0.0",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.1.0",
     "require-dir": "^0.3.1",
