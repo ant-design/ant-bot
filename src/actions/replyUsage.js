@@ -8,7 +8,7 @@ to ask questions in [Stack Overflow](http://stackoverflow.com/questions/tagged/a
 or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
 `react` to your questions.";
 
-function replyUsageIssue(on) {
+function replyUsage(on) {
   on('issues_labeled', (payload) => {
     if (payload.label.name === 'Usage') {
       const owner = payload.repository.owner.login;
@@ -32,4 +32,4 @@ function replyUsageIssue(on) {
   });
 }
 
-module.exports = replyUsageIssue;
+module.exports = replyUsage;

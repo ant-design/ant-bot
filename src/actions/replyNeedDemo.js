@@ -3,7 +3,7 @@ const github = require('../github');
 
 const comment = 'Hellp @{sender}. Please provide a re-producible demo: http://codepen.io/benjycui/pen/KgPZrE?editors=001';
 
-function replyNeedDemoIssue(on) {
+function replyNeedDemo(on) {
   on('issues_labeled', (payload) => {
     if (payload.label.name === 'Need Demo') {
       const owner = payload.repository.owner.login;
@@ -20,4 +20,4 @@ function replyNeedDemoIssue(on) {
   });
 }
 
-module.exports = replyNeedDemoIssue;
+module.exports = replyNeedDemo;
