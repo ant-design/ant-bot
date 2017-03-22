@@ -3,7 +3,7 @@ const EventEmitter = require('events');
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const requireDir = require('require-dir');
-const { verifySignature } = require('./utils');
+const { verifySignature, getRepo } = require('./utils');
 const actions = requireDir('./actions');
 
 const app = new Koa();
@@ -19,7 +19,10 @@ app.use(ctx => {
     eventName += `_${action}`;
     console.log('receive event: ', eventName);
     if (payload.sender.login !== process.env.GITHUB_BOT_NAME) {
-      githubEvent.emit(eventName, payload);
+      githubEvent.emit(eventName, {
+        repo: getRepo(ctx.request),
+        payload,
+      });
     }
     ctx.body = 'Ok.';
   } else {

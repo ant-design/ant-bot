@@ -9,7 +9,7 @@ or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
 `react` to your question.";
 
 function replyUsage(on) {
-  on('issues_labeled', (payload) => {
+  on('issues_labeled', ({ payload }) => {
     if (payload.label.name === 'Usage') {
       commentIssue(
         payload,
