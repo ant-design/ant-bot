@@ -129,6 +129,12 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+boom@4.x.x:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/boom/-/boom-4.3.0.tgz#1ed1b4b8cd6891b602910debe33e1d511531b847"
+  dependencies:
+    hoek "4.x.x"
+
 brace-expansion@^1.0.0:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.6.tgz#7197d7eaa9b87e648390ea61fc66c84427420df9"
@@ -181,9 +187,9 @@ chokidar@^1.4.3:
   optionalDependencies:
     fsevents "^1.0.0"
 
-co-body@^5.0.0:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/co-body/-/co-body-5.0.3.tgz#4cd2a9ca924386fcfa60ea24673e7efd7ec87b78"
+co-body@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/co-body/-/co-body-5.1.0.tgz#e0e18561e99cdc8cb98ab8cce6ef7e5046f076ca"
   dependencies:
     inflation "^2.0.0"
     qs "^6.4.0"
@@ -253,6 +259,12 @@ cryptiles@2.x.x:
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-2.0.5.tgz#3bdfecdc608147c1c67202fa291e7dca59eaa3b8"
   dependencies:
     boom "2.x.x"
+
+cryptiles@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-3.1.1.tgz#86a9203f7367a0e9324bc7555ff0fcf5f81979ee"
+  dependencies:
+    boom "4.x.x"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -561,6 +573,10 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
+hoek@4.x.x:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.1.0.tgz#4a4557460f69842ed463aa00628cc26d2683afa7"
+
 http-assert@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/http-assert/-/http-assert-1.2.0.tgz#d6392e6f6519def4e340266b35096db6d3feba00"
@@ -780,11 +796,11 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.0.2"
 
-koa-bodyparser@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/koa-bodyparser/-/koa-bodyparser-4.1.0.tgz#f1112202bd059f74e03ef2d1f344c4dd5038ab95"
+koa-bodyparser@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/koa-bodyparser/-/koa-bodyparser-4.2.0.tgz#bce6e08bc65f8709b6d1faa9411c7f0d8938aa54"
   dependencies:
-    co-body "^5.0.0"
+    co-body "^5.1.0"
     copy-to "^2.0.1"
 
 koa-compose@^3.0.0:

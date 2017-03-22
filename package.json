@@ -12,10 +12,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "cryptiles": "^3.1.1",
     "dotenv": "^4.0.0",
     "github": "^9.2.0",
     "koa": "^2.2.0",
-    "koa-bodyparser": "^4.1.0",
+    "koa-bodyparser": "4.2.0",
     "require-dir": "^0.3.1",
     "string-template": "^1.0.0"
   },

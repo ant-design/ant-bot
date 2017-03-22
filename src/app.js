@@ -3,6 +3,7 @@ const EventEmitter = require('events');
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const requireDir = require('require-dir');
+const { verifySignature } = require('./utils');
 const actions = requireDir('./actions');
 
 const app = new Koa();
@@ -12,7 +13,7 @@ app.use(bodyParser());
 
 app.use(ctx => {
   let eventName = ctx.request.headers['x-github-event'];
-  if (eventName) {
+  if (eventName && verifySignature(ctx.request)) {
     const payload = ctx.request.body;
     const action = payload.action;
     eventName += `_${action}`;
