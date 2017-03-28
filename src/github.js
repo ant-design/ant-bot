@@ -34,5 +34,11 @@ module.exports = {
       number,
       state: 'closed',
     });
-  }
+  },
+
+  getMembers() {
+    return github.orgs.getMembers({
+      org: 'ant-design',
+    });
+  },
 };
