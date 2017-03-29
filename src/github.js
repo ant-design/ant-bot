@@ -36,9 +36,10 @@ module.exports = {
     });
   },
 
-  getMembers() {
+  getMembers(cb) {
     return github.orgs.getMembers({
       org: 'ant-design',
-    });
+      per_page: 100,
+    }, cb);
   },
 };
