@@ -14,6 +14,9 @@ function replyInvalid(on) {
   });
 
   on('issues_opened', ({ payload, repo }) => {
+    if (repo !== 'ant-design') {
+      return;
+    }
     const { issue } = payload;
     const mark = 'ant-design-issue-helper';
     const opener = issue.user.login;
