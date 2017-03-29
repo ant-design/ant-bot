@@ -1,5 +1,5 @@
 const format = require('string-template');
-const { commentIssue, closeIssue, getMembers } = require('../github');
+const { commentIssue, closeIssue, getMembers, addLabels } = require('../github');
 
 const comment = "\
 Hello @{user}, your issue has been closed because it does not conform to our \
@@ -30,6 +30,7 @@ function replyInvalid(on) {
       );
 
       closeIssue(payload);
+      addLabels(payload, ['Invalid']);
     }
   });
 }

@@ -36,6 +36,19 @@ module.exports = {
     });
   },
 
+  addLabels(payload, labels) {
+    const owner = payload.repository.owner.login;
+    const repo = payload.repository.name;
+    const number = payload.issue.number;
+
+    github.issues.addLabels({
+      owner,
+      repo,
+      number,
+      labels,
+    })
+  },
+
   getMembers(cb) {
     return github.orgs.getMembers({
       org: 'ant-design',
