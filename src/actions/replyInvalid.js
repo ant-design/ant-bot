@@ -7,6 +7,7 @@ issue requirements. Please use the [Issue Helper](http://new-issue.ant.design?re
 to create an issue, thank you!"
 
 let members = [];
+const repos = ['ant-design', 'ant-design-mobile'];
 
 function replyInvalid(on) {
   getMembers((error, res) => {
@@ -14,7 +15,7 @@ function replyInvalid(on) {
   });
 
   on('issues_opened', ({ payload, repo }) => {
-    if (repo !== 'ant-design') {
+    if (repos.indexOf(repo) === -1) {
       return;
     }
     const { issue } = payload;
