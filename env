@@ -1,4 +1,10 @@
 # rename this file to .env
+
+# Bot's personal access tokens, get from https://github.com/settings/tokens
 GITHUB_TOKEN=token
+
+# Webhook secret token, see https://developer.github.com/webhooks/securing/
 GITHUB_SECRET_TOKEN=secret_token
+
+# Bot's username
 GITHUB_BOT_NAME=botname

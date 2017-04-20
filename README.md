@@ -5,6 +5,7 @@
 ```
 $ yarn
 $ cp env .env
+$ vim .env
 $ yarn dev
 ```
 
