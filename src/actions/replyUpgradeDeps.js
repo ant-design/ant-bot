@@ -14,7 +14,7 @@ const comment = {
   'ant-design-mobile': reply,
 }
 
-function replyNeedDemo(on) {
+function replyUpgradeDeps(on) {
   on('issues_labeled', ({ payload, repo }) => {
     if (payload.label.name === 'Upgrade Deps') {
       commentIssue(
