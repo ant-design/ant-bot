@@ -2,6 +2,8 @@ const format = require('string-template');
 const { commentIssue } = require('../github');
 
 const reply = `
+Hello @{user}.
+
 - If you use npm, please try `rm -rf node_modules && npm install` to upgrade all your deps.
 - If you use yarn, you may need `yarn upgrade`.
 
