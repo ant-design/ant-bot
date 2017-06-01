@@ -25,4 +25,4 @@ function replyNeedDemo(on) {
   });
 }
 
-module.exports = replyNeedDemo;
+module.exports = replyUpgradeDeps;
