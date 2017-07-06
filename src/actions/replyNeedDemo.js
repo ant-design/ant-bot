@@ -2,8 +2,8 @@ const format = require('string-template');
 const { commentIssue } = require('../github');
 
 const comment = {
-  'ant-design': 'Hello @{user}. Please provide a re-producible demo: http://codepen.io/benjycui/pen/KgPZrE?editors=001',
-  'ant-design-mobile': 'Hello @{user}. Please provide a re-producible demo: http://codepen.io/paranoidjk/pen/LWpaKe',
+  'ant-design': 'Hello @{user}. Please provide a re-producible demo: https://codepen.io/pen?template=KgPZrE&editors=0010',
+  'ant-design-mobile': 'Hello @{user}. Please provide a re-producible demo: https://codepen.io/pen?template=LWpaKe&editors=0010',
 }
 
 function replyNeedDemo(on) {
