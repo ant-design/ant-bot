@@ -3,7 +3,7 @@ const { commentIssue, closeIssue } = require('../github');
 
 const comment = "\
 Hello @{user}, we use GitHub issues to trace bugs or discuss \
-plans of Ant Design. So, please don't ask usage questions here. You can try \
+plans of Ant Design. So, please [don't ask usage questions](https://github.com/ant-design/ant-design/issues/2320) here. You can try \
 to ask questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/antd) \
 or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
 `react` to your question.";
