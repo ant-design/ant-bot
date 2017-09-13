@@ -30,7 +30,9 @@ function replyInvalid(on) {
         })
       );
 
-      closeIssue(payload);
+      if (repo === 'ant-design') {
+        closeIssue(payload);
+      }
       addLabels(payload, ['Invalid']);
     }
   });
