@@ -4,7 +4,7 @@ const githubEvent = require('../githubEvent');
 module.exports = function webhook(ctx) {
   let eventName = ctx.request.headers['x-github-event'];
   if (eventName && verifySignature(ctx.request)) {
-    const payload = JSON.parse(ctx.request.body.payload);
+    const payload = ctx.request.body;
     const action = payload.action;
     eventName += `_${action}`;
     console.log('receive event: ', eventName);
