@@ -1,5 +1,8 @@
 # rename this file to .env
 
+# GitHub owner
+GITHUB_OWNER=ant-design
+
 # Bot's personal access tokens, get from https://github.com/settings/tokens
 GITHUB_TOKEN=token
 

@@ -13,8 +13,4 @@ module.exports = {
     signature = `sha1=${signature}`;
     return fixedTimeComparison(signature, request.headers['x-hub-signature'])
   },
-
-  getRepo(request) {
-    return request.url.split('/')[1];
-  },
 };

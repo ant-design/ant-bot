@@ -1,39 +1,30 @@
 require('dotenv').config();
-const EventEmitter = require('events');
 const Koa = require('koa');
+const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const requireDir = require('require-dir');
-const { verifySignature, getRepo } = require('./utils');
+const githubEvent = require('./githubEvent');
 const actions = requireDir('./actions');
+const webhook = require('./routes/webhook');
 
 const app = new Koa();
-const githubEvent = new EventEmitter();
+const router = new Router();
 
-app.use(bodyParser());
+router
+  .get('*', function (ctx) {
+    ctx.body = 'Hello World!';
+  })
+  .post('/webhook/:repo', webhook);
 
-app.use(ctx => {
-  let eventName = ctx.request.headers['x-github-event'];
-  if (eventName && verifySignature(ctx.request)) {
-    const payload = ctx.request.body;
-    const action = payload.action;
-    eventName += `_${action}`;
-    console.log('receive event: ', eventName);
-    if (payload.sender.login !== process.env.GITHUB_BOT_NAME) {
-      githubEvent.emit(eventName, {
-        repo: getRepo(ctx.request),
-        payload,
-      });
-    }
-    ctx.body = 'Ok.';
-  } else {
-    ctx.body = 'Go away.';
-  }
-});
+app
+  .use(bodyParser())
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 Object.keys(actions).forEach((key) => {
   actions[key](githubEvent.on.bind(githubEvent));
 });
 
-const port = process.env.NODE_ENV === 'production' ? 80 : 3000;
+const port = 3000;
 app.listen(port);
-console.log(`Listening on http://0.0.0.0:${port}`);
+console.log(`Listening on http://127.0.0.1:${port}`);

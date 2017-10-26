@@ -1,4 +1,5 @@
 const GitHub = require('github');
+const { promisify } = require('util');
 
 const github = new GitHub({
   debug: process.env.NODE_ENV === 'development',
@@ -36,11 +37,7 @@ module.exports = {
     });
   },
 
-  addLabels(payload, labels) {
-    const owner = payload.repository.owner.login;
-    const repo = payload.repository.name;
-    const number = payload.issue.number;
-
+  addLabels({ owner, repo, number, labels }) {
     github.issues.addLabels({
       owner,
       repo,
@@ -49,10 +46,27 @@ module.exports = {
     })
   },
 
+  removeLabel({ owner, repo, number, name }) {
+    github.issues.removeLabel({
+      owner,
+      repo,
+      number,
+      name,
+    })
+  },
+
   getMembers(cb) {
     return github.orgs.getMembers({
-      org: 'ant-design',
+      org: process.env.GITHUB_OWNER,
       per_page: 100,
     }, cb);
   },
+
+  getIssues(repo) {
+    return promisify(github.issues.getForRepo)({
+      owner: process.env.GITHUB_OWNER,
+      repo,
+      per_page: 200,
+    });
+ },
 };

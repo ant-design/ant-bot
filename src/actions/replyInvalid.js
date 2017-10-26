@@ -33,7 +33,12 @@ function replyInvalid(on) {
       if (repo === 'ant-design') {
         closeIssue(payload);
       }
-      addLabels(payload, ['Invalid']);
+      addLabels({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number:  payload.issue.number,
+        labels: ['Invalid'],
+      });
     }
   });
 }
