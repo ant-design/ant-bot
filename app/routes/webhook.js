@@ -1,4 +1,4 @@
-const { verifySignature } = require('../utils');
+const { verifySignature } = require('../../lib/utils');
 const githubEvent = require('../githubEvent');
 
 module.exports = function webhook(ctx) {

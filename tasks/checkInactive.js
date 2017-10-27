@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const { getIssues, addLabels, removeLabel } = require('../github');
 const Duration = require("duration-js");
+const { getIssues, addLabels, removeLabel } = require('../lib/github');
 
 const repo = process.argv[2];
 

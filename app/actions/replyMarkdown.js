@@ -1,6 +1,6 @@
 const format = require('string-template');
-const { commentIssue } = require('../github');
-const { mentioned } = require('../utils');
+const { commentIssue } = require('../../lib/github');
+const { mentioned } = require('../../lib/utils');
 
 const comment = "Hello @{user}, please format your issue in markdown https://segmentfault.com/markdown";
 

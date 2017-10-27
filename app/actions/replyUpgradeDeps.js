@@ -1,5 +1,5 @@
 const format = require('string-template');
-const { commentIssue } = require('../github');
+const { commentIssue } = require('../../lib/github');
 
 const reply = `
 Hello @{user}.

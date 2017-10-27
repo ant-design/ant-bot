@@ -1,5 +1,5 @@
 const format = require('string-template');
-const { commentIssue } = require('../github');
+const { commentIssue } = require('../../lib/github');
 
 const comment = {
   'ant-design': 'Hello @{user}. Please provide a re-producible demo: https://codepen.io/pen?template=KgPZrE&editors=0010',

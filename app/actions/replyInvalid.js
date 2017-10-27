@@ -1,5 +1,5 @@
 const format = require('string-template');
-const { commentIssue, closeIssue, getMembers, addLabels } = require('../github');
+const { commentIssue, closeIssue, getMembers, addLabels } = require('../../lib/github');
 
 const comment = "\
 Hello @{user}, your issue has been closed because it does not conform to our \

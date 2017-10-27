@@ -1,4 +1,4 @@
-const { commentIssue } = require('../github');
+const { commentIssue } = require('../../lib/github');
 
 const comment = `
 It will be better to write your issue/comment in English, so more people can understand you.
