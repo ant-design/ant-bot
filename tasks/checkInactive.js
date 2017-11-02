@@ -22,16 +22,6 @@ function checkActive(issue) {
       number: issue.number,
       labels: [INACTIVE_LABEL]
     });
-  } else if (age.days() < 3) {
-    const labels = issue.labels.map(l => l.name);
-    if (labels.includes(INACTIVE_LABEL)) {
-      removeLabel({
-        owner: process.env.GITHUB_OWNER,
-        repo,
-        number: issue.number,
-        name: INACTIVE_LABEL,
-      })
-    }
   }
 }
 
