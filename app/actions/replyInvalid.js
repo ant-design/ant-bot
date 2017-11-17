@@ -31,7 +31,11 @@ function replyInvalid(on) {
       );
 
       if (repo === 'ant-design') {
-        closeIssue(payload);
+        closeIssue({
+          owner: payload.repository.owner.login,
+          repo: payload.repository.name,
+          number: payload.issue.number,
+        });
       }
       addLabels({
         owner: payload.repository.owner.login,

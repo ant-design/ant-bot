@@ -16,7 +16,11 @@ function replyUsage(on) {
         format(comment, { user: payload.issue.user.login })
       );
 
-      closeIssue(payload);
+      closeIssue({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.issue.number,
+      });
     }
   });
 }
