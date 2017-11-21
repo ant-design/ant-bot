@@ -29,12 +29,3 @@ function hello(on) {
 
 module.exports = hello;
 ```
-
-## Deploy to now
-
-```
-$ now secret add github-token token
-$ now secret add github-secret-token secre_token
-$ now
-$ now alias
-```
