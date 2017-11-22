@@ -7,7 +7,7 @@ issue requirements. Please use the [Issue Helper](http://new-issue.ant.design?re
 to create an issue, thank you!"
 
 let members = [];
-const repos = ['ant-design', 'ant-design-mobile'];
+const repos = ['ant-design'];
 
 function replyInvalid(on) {
   getMembers((error, res) => {
@@ -30,13 +30,12 @@ function replyInvalid(on) {
         })
       );
 
-      if (repo === 'ant-design') {
-        closeIssue({
-          owner: payload.repository.owner.login,
-          repo: payload.repository.name,
-          number: payload.issue.number,
-        });
-      }
+      closeIssue({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.issue.number,
+      });
+
       addLabels({
         owner: payload.repository.owner.login,
         repo: payload.repository.name,
