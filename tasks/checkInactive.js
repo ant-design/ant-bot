@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
+require('../app/setup');
 const Duration = require('duration-js');
 const { getIssues, addLabels, removeLabel, closeIssue, commentIssue } = require('../lib/github');
 
