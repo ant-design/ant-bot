@@ -1,7 +1,7 @@
 {
   "name": "ant-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "ant bot",
   "main": "src/app.js",
   "scripts": {
     "start": "node app/index.js",
