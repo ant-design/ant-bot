@@ -15,7 +15,7 @@ function replyUsage(on) {
       commentIssue({
         owner: payload.repository.owner.login,
         repo: payload.repository.name,
-        number: payload.repository.number,
+        number: payload.issue.number,
         body: format(comment, { user: payload.issue.user.login }),
       });
 
