@@ -27,6 +27,7 @@
     "koa-bodyparser": "4.2.0",
     "koa-logger": "^3.1.0",
     "koa-router": "^7.2.1",
+    "raven": "^2.2.1",
     "require-dir": "^0.3.2",
     "string-template": "^1.0.0"
   },
@@ -34,7 +35,6 @@
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
     "nodemon": "^1.11.0",
-    "prettier": "^1.9.0",
-    "raven": "^2.2.1"
+    "prettier": "^1.9.0"
   }
 }
