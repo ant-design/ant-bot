@@ -8,10 +8,12 @@ function replyMarkdown(on) {
   on('issue_comment_created', ({ payload }) => {
     if (mentioned(payload.comment.body) &&
         payload.comment.body.includes('markdown')) {
-      commentIssue(
-        payload,
-        format(comment, { user: payload.issue.user.login })
-      );
+      commentIssue({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.repository.number,
+        body: format(comment, { user: payload.issue.user.login }),
+      });
     }
   });
 }

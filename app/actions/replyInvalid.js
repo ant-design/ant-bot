@@ -22,13 +22,12 @@ function replyInvalid(on) {
     const mark = 'ant-design-issue-helper';
     const opener = issue.user.login;
     if (!issue.body.includes(mark) && !members.includes(opener)) {
-      commentIssue(
-        payload,
-        format(comment, {
-          user: opener,
-          repo,
-        })
-      );
+      commentIssue({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.repository.number,
+        body: format(comment, { user: opener, repo, })
+      });
 
       closeIssue({
         owner: payload.repository.owner.login,

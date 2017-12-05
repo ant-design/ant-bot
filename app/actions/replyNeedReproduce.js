@@ -11,10 +11,12 @@ Hello @{user}. Please provide a online reproduction by forking this codepen http
 function replyNeedReproduce(on) {
   on('issues_labeled', ({ payload, repo }) => {
     if (payload.label.name === 'Need Reproduce') {
-      commentIssue(
-        payload,
-        format(comment[repo], { user: payload.issue.user.login })
-      );
+      commentIssue({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.repository.number,
+        body: format(comment[repo], { user: payload.issue.user.login }),
+      });
     }
   });
 }

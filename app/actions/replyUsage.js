@@ -11,10 +11,12 @@ or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
 function replyUsage(on) {
   on('issues_labeled', ({ payload }) => {
     if (payload.label.name === 'Usage') {
-      commentIssue(
-        payload,
-        format(comment, { user: payload.issue.user.login })
-      );
+      commentIssue({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.repository.number,
+        body: format(comment, { user: payload.issue.user.login }),
+      });
 
       closeIssue({
         owner: payload.repository.owner.login,
