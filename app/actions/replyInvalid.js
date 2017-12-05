@@ -1,10 +1,11 @@
 const format = require('string-template');
 const { commentIssue, closeIssue, getMembers, addLabels } = require('../../lib/github');
 
-const comment = "\
+const comment =
+  '\
 Hello @{user}, your issue has been closed because it does not conform to our \
 issue requirements. Please use the [Issue Helper](http://new-issue.ant.design?repo={repo}) \
-to create an issue, thank you!"
+to create an issue, thank you!';
 
 let members = [];
 const repos = ['ant-design'];
@@ -26,7 +27,7 @@ function replyInvalid(on) {
         owner: payload.repository.owner.login,
         repo: payload.repository.name,
         number: payload.repository.number,
-        body: format(comment, { user: opener, repo, })
+        body: format(comment, { user: opener, repo }),
       });
 
       closeIssue({
@@ -38,7 +39,7 @@ function replyInvalid(on) {
       addLabels({
         owner: payload.repository.owner.login,
         repo: payload.repository.name,
-        number:  payload.issue.number,
+        number: payload.issue.number,
         labels: ['Invalid'],
       });
     }

@@ -6,13 +6,17 @@
   "scripts": {
     "start": "node app/index.js",
     "dev": "NODE_ENV=development nodemon app/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "engines": {
-    "node": "8"
+    "node": ">=8"
   },
   "dependencies": {
     "cryptiles": "^3.1.1",
@@ -27,6 +31,9 @@
     "string-template": "^1.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.9.0"
   }
 }

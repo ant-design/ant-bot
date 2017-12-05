@@ -1,7 +1,8 @@
 const format = require('string-template');
 const { commentIssue, closeIssue } = require('../../lib/github');
 
-const comment = "\
+const comment =
+  "\
 Hello @{user}, we use GitHub issues to trace bugs or discuss \
 plans of Ant Design. So, please [don't ask usage questions](https://github.com/ant-design/ant-design/issues/2320) here. You can try \
 to ask questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/antd) \

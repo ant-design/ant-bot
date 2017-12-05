@@ -12,7 +12,7 @@ Hello @{user}.
 const comment = {
   'ant-design': reply,
   'ant-design-mobile': reply,
-}
+};
 
 function replyUpgradeDeps(on) {
   on('issues_labeled', ({ payload, repo }) => {

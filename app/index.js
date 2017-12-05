@@ -12,7 +12,7 @@ const app = new Koa();
 const router = new Router();
 
 router
-  .get('*', function (ctx) {
+  .get('*', function(ctx) {
     ctx.body = 'Hello World!';
   })
   .post('/webhook/:repo', webhook);
@@ -23,7 +23,7 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-Object.keys(actions).forEach((key) => {
+Object.keys(actions).forEach(key => {
   actions[key](githubEvent.on.bind(githubEvent));
 });
 

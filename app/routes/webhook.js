@@ -18,4 +18,4 @@ module.exports = function webhook(ctx) {
   } else {
     ctx.body = 'Go away.';
   }
-}
+};
