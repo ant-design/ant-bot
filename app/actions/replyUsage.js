@@ -11,7 +11,7 @@ or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
 
 function replyUsage(on) {
   on('issues_labeled', ({ payload }) => {
-    if (payload.label.name === 'Usage') {
+    if (['Usage', 'Question'].includes(payload.label.name)) {
       commentIssue({
         owner: payload.repository.owner.login,
         repo: payload.repository.name,
