@@ -55,7 +55,7 @@ const components = {
 };
 
 function assignOwner(on) {
-  on('issues_labeled', ({ payload }) => {
+  const handler = ({ payload }) => {
     const matches = payload.label.name.match(/Component: (.+)/);
     if (!matches) {
       return;
@@ -68,7 +68,9 @@ function assignOwner(on) {
       number: payload.issue.number,
       assignees: [owner],
     });
-  });
+  };
+  on('issues_labeled', handler);
+  on('pull_request_labeled', handler);
 }
 
 module.exports = assignOwner;
