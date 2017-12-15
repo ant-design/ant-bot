@@ -65,7 +65,7 @@ function assignOwner(on) {
     addAssigneesToIssue({
       owner: payload.repository.owner.login,
       repo: payload.repository.name,
-      number: payload.issue.number,
+      number: payload.issue ? payload.issue.number : payload.pull_request.number,
       assignees: [owner],
     });
   };
