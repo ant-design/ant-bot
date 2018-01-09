@@ -47,6 +47,6 @@ function checkActive(issue) {
   }
 }
 
-getIssues(repo).then(({ data: issues }) => {
+getIssues(repo).then(issues => {
   issues.forEach(checkActive);
 });
