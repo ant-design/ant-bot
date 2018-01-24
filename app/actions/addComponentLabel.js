@@ -56,6 +56,9 @@ const components = [
 
 function addComponentLabel(on) {
   on('issues_opened', ({ payload, repo }) => {
+    if (repo !== 'ant-design') {
+      return;
+    }
     const { issue } = payload;
     let label;
     for (let i = 0; i < components.length; ++i) {
