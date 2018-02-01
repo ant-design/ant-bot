@@ -1,5 +1,6 @@
 const format = require('string-template');
 const { commentIssue, closeIssue, getMembers, addLabels } = require('../../lib/github');
+const { isIssueValid } = require('../utils');
 
 const comment =
   '\
@@ -20,9 +21,8 @@ function replyInvalid(on) {
       return;
     }
     const { issue } = payload;
-    const mark = 'ant-design-issue-helper';
     const opener = issue.user.login;
-    if (!issue.body.includes(mark) && !members.includes(opener)) {
+    if (!isIssueValid(issue) && !members.includes(opener)) {
       commentIssue({
         owner: payload.repository.owner.login,
         repo: payload.repository.name,

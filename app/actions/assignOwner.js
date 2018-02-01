@@ -1,4 +1,5 @@
 const { addAssigneesToIssue } = require('../../lib/github');
+const { isIssueValid } = require('../utils');
 
 const components = {
   Affix: 'ddcat1115',
@@ -56,6 +57,10 @@ const components = {
 
 function assignOwner(on) {
   const handler = ({ payload }) => {
+    const { issue } = payload;
+    if (issue && !isIssueValid(issue)) {
+      return;
+    }
     const matches = payload.label.name.match(/Component: (.+)/);
     if (!matches) {
       return;
@@ -65,7 +70,7 @@ function assignOwner(on) {
     addAssigneesToIssue({
       owner: payload.repository.owner.login,
       repo: payload.repository.name,
-      number: payload.issue ? payload.issue.number : payload.pull_request.number,
+      number: issue ? issue.number : payload.pull_request.number,
       assignees: [owner],
     });
   };
