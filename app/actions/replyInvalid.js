@@ -1,6 +1,6 @@
 const format = require('string-template');
 const { commentIssue, closeIssue, getMembers, addLabels } = require('../../lib/github');
-const { isIssueValid } = require('../utils');
+const { isIssueValid } = require('../../lib/utils');
 
 const comment =
   '\

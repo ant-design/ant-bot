@@ -1,5 +1,5 @@
 const { addAssigneesToIssue } = require('../../lib/github');
-const { isIssueValid } = require('../utils');
+const { isIssueValid } = require('../../lib/utils');
 
 const components = {
   Affix: 'ddcat1115',
