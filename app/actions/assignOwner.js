@@ -50,8 +50,8 @@ const components = {
   Timeline: 'dengfuping',
   Tooltip: 'yesmeck',
   Transfer: 'afc163',
-  Tree: 'valleykid',
-  TreeSelect: 'valleykid',
+  Tree: 'zombieJ',
+  TreeSelect: 'zombieJ',
   Upload: 'dengfuping',
 };
 
