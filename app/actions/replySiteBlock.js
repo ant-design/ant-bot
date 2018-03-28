@@ -14,10 +14,10 @@ function replySiteBlock(on) {
       let content = `
         * Ant Design 官网：https://ant.design
         * Ant Design Pro: https://pro.ant.design
-        * 国内官网镜像：http://ant-design.gitee.io
+        * Ant Design 国内官网镜像：http://ant-design.gitee.io
         * Pro 国内官网镜像：http://ant-design-pro.gitee.io
         * Ant Design Mobile 官网: http://mobile.ant.design
-        *Ant Design Mobile 国内镜像: http://antd-mobile.gitee.io
+        * Ant Design Mobile 国内镜像: http://antd-mobile.gitee.io
       `;
 
       commentIssue({
