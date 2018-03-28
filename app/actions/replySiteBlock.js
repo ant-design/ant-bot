@@ -24,7 +24,7 @@ function replySiteBlock(on) {
 * Ant Design: http://ant-design.gitee.io
 * Ant Design Pro: http://ant-design-pro.gitee.io
 * Ant Design Mobile: http://antd-mobile.gitee.io
-* Ant Motion: http://ant-motion.gitee.io/
+* Ant Motion: http://ant-motion.gitee.io
       `;
 
       commentIssue({
