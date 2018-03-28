@@ -2,10 +2,26 @@ const { commentIssue, closeIssue } = require('../../lib/github');
 
 const keyword1 = ['官网', '网站', 'mobile ant design', 'mobile.ant.design', 'ant design', 'ant.design', 'pro'];
 
-const keyword2 = ['挂了', '无法访问', '不能访问', '访问不了', '出问题', '打不开', '登不上'];
+const keyword2 = [
+  '挂了',
+  '无法访问',
+  '不能访问',
+  '访问不了',
+  '出问题',
+  '打不开',
+  '登不上',
+  "can't open",
+  'can not open',
+  'can not be reached',
+  "can't be reached",
+];
+
+function matchKeyword(content, keywords) {
+  return keywords.find(item => content.toLowerCase().includes(item));
+}
 
 function containsSiteBlock(title) {
-  return keyword1.find(item => title.includes(item)) && keyword2.find(item => title.includes(item));
+  return matchKeyword(title, keyword1) && matchKeyword(title, keyword2);
 }
 
 function replySiteBlock(on) {

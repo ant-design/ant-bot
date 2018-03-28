@@ -13,5 +13,6 @@ module.exports = {
     'space-before-function-paren': 0,
     'no-console': 0,
     'prefer-destructuring': 0,
+    'no-underscore-dangle': 0,
   },
 };
