@@ -11,7 +11,7 @@ function containsSiteBlock(title) {
 function replySiteBlock(on) {
   on('issues_opened', async ({ payload }) => {
     if (containsSiteBlock(payload.issue.title)) {
-      let content = `
+      const content = `
 ## 官网
 
 * Ant Design: https://ant.design
