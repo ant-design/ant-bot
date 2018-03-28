@@ -7,6 +7,8 @@
     "start": "node app/index.js",
     "dev": "NODE_ENV=development nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./app",
+    "ci": "npm run lint",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -33,6 +35,11 @@
     "string-template": "^1.0.0"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
     "nodemon": "^1.11.0",

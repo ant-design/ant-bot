@@ -5,6 +5,7 @@ const bodyParser = require('koa-bodyparser');
 const logger = require('koa-logger');
 const requireDir = require('require-dir');
 const githubEvent = require('./githubEvent');
+
 const actions = requireDir('./actions');
 const webhook = require('./routes/webhook');
 

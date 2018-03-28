@@ -1,0 +1,23 @@
+sudo: false
+
+git:
+  submodules: false
+
+language: node_js
+
+notifications:
+  email:
+  - hust2012jiangkai@gmail.com
+
+node_js:
+  - "8"
+
+env:
+  matrix:
+    - TEST_TYPE=ci
+
+script:
+  - |
+    if [ "$TEST_TYPE" = ci ]; then
+      npm run ci
+    fi
