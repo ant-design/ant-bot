@@ -26,6 +26,13 @@ function replySiteBlock(on) {
         number: payload.issue.number,
         body: content,
       });
+
+      closeIssue({
+        owner: payload.repository.owner.login,
+        repo: payload.repository.name,
+        number: payload.issue.number,
+      });
+
     }
   });
 }
