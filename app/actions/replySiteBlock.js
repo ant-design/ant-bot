@@ -12,6 +12,8 @@ function replySiteBlock(on) {
   on('issues_opened', async ({ payload }) => {
     if (containsSiteBlock(payload.issue.title)) {
       const content = `
+Ant Design 系列官网由于某些众所周知的原因无法访问，建议翻墙或访问国内镜像站点。
+
 ## 官网
 
 * Ant Design: https://ant.design
