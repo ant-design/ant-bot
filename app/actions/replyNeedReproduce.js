@@ -1,17 +1,17 @@
 const format = require('string-template');
 const { commentIssue } = require('../../lib/github');
+const { NEED_REPRODUCE } = require('../label');
 
-const comment = {
-  'ant-design': `
-Hello @{user}. Please provide a online reproduction by forking this link https://u.ant.design/codesandbox-repro. Issues labeled by \`Need Reproduce\` will be closed if no activities in 7 days.
-`,
-  'ant-design-mobile':
-    'Hello @{user}. Please provide a re-producible demo: https://codepen.io/pen?template=LWpaKe&editors=0010',
-};
+const comment = `
+Hello @{user}. Please provide a reproducible example by creating a github repo.
+
+Issues labeled by \`Need Reproduce\` will be closed if no activities in 7 days.
+`;
 
 function replyNeedReproduce(on) {
   on('issues_labeled', ({ payload, repo }) => {
-    if (payload.label.name === 'Need Reproduce' && comment[repo]) {
+    if (repo !== 'egg') return;
+    if (payload.label.name === NEED_REPRODUCE) {
       commentIssue({
         owner: payload.repository.owner.login,
         repo: payload.repository.name,
