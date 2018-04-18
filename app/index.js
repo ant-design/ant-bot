@@ -25,7 +25,9 @@ app
   .use(router.allowedMethods());
 
 Object.keys(actions).forEach(key => {
-  actions[key](githubEvent.on.bind(githubEvent));
+  if (!key.startsWith('_')) {
+    actions[key](githubEvent.on.bind(githubEvent));
+  }
 });
 
 const port = process.env.PORT || 3000;
