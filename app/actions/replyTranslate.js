@@ -6,7 +6,7 @@ function containsChinese(title) {
 }
 
 function replyTranslate(on) {
-  on('issues_opened', async ({ payload }) => {
+  on('issues.opened', async ({ payload }) => {
     if (containsChinese(payload.issue.title)) {
       let content = `
 Translation of this issue:

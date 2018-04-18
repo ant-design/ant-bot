@@ -6,7 +6,9 @@ module.exports = function webhook(ctx) {
   if (eventName && verifySignature(ctx.request)) {
     const payload = ctx.request.body;
     const action = payload.action;
-    eventName += `_${action}`;
+    if (action) {
+      eventName += `.${action}`;
+    }
     console.log('receive event: ', eventName);
     githubEvent.emit(eventName, {
       repo: ctx.params.repo,

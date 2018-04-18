@@ -10,7 +10,7 @@ Hello @{user}. Please provide a online reproduction by forking this link https:/
 };
 
 function replyNeedReproduce(on) {
-  on('issues_labeled', ({ payload, repo }) => {
+  on('issues.labeled', ({ payload, repo }) => {
     if (payload.label.name === 'Need Reproduce' && comment[repo]) {
       commentIssue({
         owner: payload.repository.owner.login,

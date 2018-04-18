@@ -16,7 +16,7 @@ function replyInvalid(on) {
     members = res.data.map(m => m.login);
   });
 
-  on('issues_opened', ({ payload, repo }) => {
+  on('issues.opened', ({ payload, repo }) => {
     if (repos.indexOf(repo) === -1) {
       return;
     }

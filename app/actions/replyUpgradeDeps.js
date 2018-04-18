@@ -15,7 +15,7 @@ const comment = {
 };
 
 function replyUpgradeDeps(on) {
-  on('issues_labeled', ({ payload, repo }) => {
+  on('issues.labeled', ({ payload, repo }) => {
     if (payload.label.name === 'Upgrade Deps') {
       commentIssue({
         owner: payload.repository.owner.login,
