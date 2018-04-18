@@ -12,22 +12,18 @@ function makeRelease(on) {
     }
     const version = payload.ref;
     const url = 'https://raw.githubusercontent.com/ant-design/ant-design/master/';
-    try {
-      const enChangelogContent = await axios.get(`${url}/CHANGELOG.en-US.md`);
-      const enChangelog = getChangelog(enChangelogContent.data, version);
-      const cnChangelogContent = await axios.get(`${url}/CHANGELOG.zh-CN.md`);
-      const cnChangelog = getChangelog(cnChangelogContent.data, version);
-      const changelog = [enChangelog, '\n', '---', '\n', cnChangelog].join('\n');
-      createRelease({
-        owner: payload.repository.owner.login,
-        repo: payload.repository.name,
-        tag_name: version,
-        name: version,
-        body: changelog,
-      });
-    } catch (e) {
-      throw e;
-    }
+    const enChangelogContent = await axios.get(`${url}/CHANGELOG.en-US.md`);
+    const enChangelog = getChangelog(enChangelogContent.data, version);
+    const cnChangelogContent = await axios.get(`${url}/CHANGELOG.zh-CN.md`);
+    const cnChangelog = getChangelog(cnChangelogContent.data, version);
+    const changelog = [enChangelog, '\n', '---', '\n', cnChangelog].join('\n');
+    createRelease({
+      owner: payload.repository.owner.login,
+      repo: payload.repository.name,
+      tag_name: version,
+      name: version,
+      body: changelog,
+    });
   });
 }
 
