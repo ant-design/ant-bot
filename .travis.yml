@@ -1,23 +1,24 @@
 sudo: false
-
 git:
   submodules: false
-
 language: node_js
-
 notifications:
   email:
   - hust2012jiangkai@gmail.com
-
 node_js:
-  - "8"
-
+- '8'
 env:
   matrix:
-    - TEST_TYPE=ci
-
+  - TEST_TYPE=ci
 script:
-  - |
-    if [ "$TEST_TYPE" = ci ]; then
-      npm run ci
-    fi
+- |
+  if [ "$TEST_TYPE" = ci ]; then
+    npm run ci
+  fi
+deploy:
+  provider: heroku
+  api_key:
+    secure: OvpuRUrXM01VH2n8E5bJL/oCZwvqsBxu2q+Ks9hm3/eQIJ3tKYxIABku9xG8MBJPCV1Pt4IGp1LGgyLRTrh1Kfg1oeIG2xwAEcCcuhs7hXWblBOBM9HzbkuKsEweIhSOWbYbip4YowkFpmKWAx7kX1fMbCO7BMYIlyggUc6hYQb4XxwYRwkD2RlynV5HqtdbORrFM4Ge8qyBRilOOto4e/nuoTc+IAbOJ9CZtVuRix6grBQ0rzaXbMQ6VR136D0r57tK3ZJ0PV9Djh1fGwbcC87Zw2MGsDs/Iu0AgWAIelw28kccBN/m/UZIShDIyqavVLanZF9qOrULFbSFK0TyOSJ/jomhf4NntdoasTPWh3bnMfzH4r7XeaBlx2UmZrMYxVs79LBkJ55v9Xv8dTFTJzaofm9/eqnMdJSv6DTQsViwDEqSSVxsmXjCZGJJIEEGgX7Fo1B4SOZPF+Oe1rIHFqa5QaUntLRJJq/bkQSS4qNr6zPOLaBR/vy/atkQTuwsVe895mv/r/jGar4FF4rZQGPAdYI4zWumEvAgYOVhjM5irHxZzDp6qzqtEZ2lexhwuBx2j+pPytXql5f9W9S6uDn9TWTeJRpoNm1URtLlLvH2O2BYDosWEMbeapmEpWsY+VB9F97AA+JvwqCTCUbK7+oo7UL7kThX/iz54CzGCf0=
+  app: ant-bot
+  on:
+    repo: ant-design/ant-bot
