@@ -8,7 +8,6 @@
     "dev": "NODE_ENV=development nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./app",
-    "ci": "npm run lint",
     "precommit": "lint-staged"
   },
   "lint-staged": {
