@@ -23,6 +23,7 @@
     "google-translate-api": "^2.3.0",
     "lodash": "^4.17.10",
     "probot": "^6.0.0",
+    "probot-commands": "^1.0.1",
     "probot-config": "^0.1.0",
     "require-dir": "^1.0.0"
   },
