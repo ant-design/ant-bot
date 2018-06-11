@@ -1,0 +1,43 @@
+{
+  "name": "neo-ant-bot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Wei Zhu <yesmeck@gmail.com> (https://github.com/ant-design/ant-bot)",
+  "license": "ISC",
+  "repository": "https://github.com/ant-design/ant-bot.git",
+  "homepage": "https://github.com/ant-design/ant-bot",
+  "bugs": "https://github.com/ant-design/ant-bot/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "google-translate-api": "^2.3.0",
+    "lodash": "^4.17.10",
+    "probot": "^6.0.0",
+    "probot-config": "^0.1.0",
+    "require-dir": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.1",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
