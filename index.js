@@ -1,13 +1,13 @@
 const requireDir = require('require-dir');
-const actions = requireDir('./lib/actions');
+const features = requireDir('./lib/features');
 
 module.exports = app => {
   // Your code here
   app.log('Yay, the app was loaded!');
 
-  Object.keys(actions).forEach(key => {
-    const action = actions[key];
-    action(app);
+  Object.keys(features).forEach(key => {
+    const feature = features[key];
+    feature(app);
   });
 
   // For more information on building apps:
