@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "author": "Wei Zhu <yesmeck@gmail.com> (https://github.com/ant-design/ant-bot)",
-  "license": "ISC",
+  "license": "MIT",
   "repository": "https://github.com/ant-design/ant-bot.git",
   "homepage": "https://github.com/ant-design/ant-bot",
   "bugs": "https://github.com/ant-design/ant-bot/issues",
