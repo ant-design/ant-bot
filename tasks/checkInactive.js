@@ -31,7 +31,10 @@ function checkActive(issue) {
     });
   }
   const labels = issue.labels.map(l => l.name);
-  if (labels.includes(NEED_REPRODUCE_LABEL) && age.days() > NEED_REPRODUCE_MAX_AGE_DAYS) {
+  if (
+    labels.some(l => l.includes(NEED_REPRODUCE_LABEL)) &&
+    age.days() > NEED_REPRODUCE_MAX_AGE_DAYS
+  ) {
     commentIssue({
       owner: process.env.GITHUB_OWNER,
       repo,
