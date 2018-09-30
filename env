@@ -11,3 +11,6 @@ GITHUB_SECRET_TOKEN=secret_token
 
 # Bot's username
 GITHUB_BOT_NAME=botname
+
+## Dingding Bot token
+DINGDING_BOT_TOKEN=1234

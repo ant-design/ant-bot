@@ -24,6 +24,17 @@ function makeRelease(on) {
       name: version,
       body: changelog,
     });
+    // Notify dingding
+    axios.post(
+      `https://oapi.dingtalk.com/robot/send?access_token=${process.env.DINGDING_BOT_TOKEN}`,
+      {
+        msgtype: 'markdown',
+        markdown: {
+          title: `${version} 发布日志`,
+          text: cnChangelogContent,
+        },
+      },
+    );
   });
 }
 
