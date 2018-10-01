@@ -31,7 +31,7 @@ function makeRelease(on) {
         msgtype: 'markdown',
         markdown: {
           title: `${version} 发布日志`,
-          text: `# Ant Design ${version} 发布日志 \n\n ${cnChangelogContent}`,
+          text: `# Ant Design ${version} 发布日志 \n\n ${cnChangelog}`,
         },
       },
     );
