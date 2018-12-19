@@ -9,6 +9,8 @@ Hello @{user}. Please provide a online reproduction by forking this link https:/
 `,
   'ant-design-mobile':
     'Hello @{user}. Please provide a re-producible demo: https://codepen.io/pen?template=LWpaKe&editors=0010',
+  'ant-design-mobile-rn':
+    'Hello @{user}. Please provide a re-producible demo: https://codesandbox.io/s/9ll8k8614p?module=%2Fsrc%2FApp.js or a minimal GitHub repository. Issues labeled by `Need Reproduce` will be closed if no activities in 7 days.',
 };
 
 function replyNeedReproduce(on) {
