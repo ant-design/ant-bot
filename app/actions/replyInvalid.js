@@ -11,7 +11,7 @@ to create an issue, thank you! \n\n\
 你可以通过 [issue 助手](http://new-issue.ant.design?repo={repo}) 来创建 issue 以方便我们定位错误。谢谢配合！';
 
 let members = [];
-const repos = ['ant-design'];
+const repos = ['ant-design', 'ant-design-mobile-rn'];
 
 function replyInvalid(on) {
   getMembers((error, res) => {
