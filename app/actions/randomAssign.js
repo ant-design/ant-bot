@@ -2,11 +2,11 @@ const { addAssigneesToIssue } = require('../../lib/github');
 const { isIssueValid } = require('../../lib/utils');
 const { sample } = require('lodash');
 
-const maintainers = ['zombieJ', 'afc163', 'chenshuai2144', 'yesmeck', 'yutingzhao1991'];
+const maintainers = ['cipchk', 'simplejason', 'wilsoncook', 'wendzhue', 'HsuanXyz', 'vthinkxie'];
 
 function randomAssign(on) {
   on('issues.opened', ({ payload, repo }) => {
-    if (repo !== 'ant-design') {
+    if (repo !== 'ng-zorro-antd') {
       return;
     }
     const maintainer = sample(maintainers);

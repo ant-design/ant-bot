@@ -4,7 +4,7 @@ const { createRelease } = require('../../lib/github');
 
 function makeRelease(on) {
   on('create', async ({ payload, repo }) => {
-    if (repo !== 'ant-design') {
+    if (repo !== 'ng-zorro-antd') {
       return;
     }
     if (payload.ref_type !== 'tag') {

@@ -1,6 +1,14 @@
 const { commentIssue, closeIssue } = require('../../lib/github');
 
-const keyword1 = ['官网', '网站', 'mobile ant design', 'mobile.ant.design', 'ant design', 'ant.design', 'pro'];
+const keyword1 = [
+  '官网',
+  '网站',
+  'mobile ant design',
+  'mobile.ant.design',
+  'ant design',
+  'ant.design',
+  'pro',
+];
 
 const keyword2 = [
   '挂了',
@@ -32,17 +40,13 @@ Ant Design 系列官网由于某些众所周知的原因无法访问，建议翻
 
 ## 官网
 
-* Ant Design: https://ant.design
-* Ant Design Pro: https://pro.ant.design
-* Ant Design Mobile: https://mobile.ant.design
-* Ant Motion: https://motion.ant.design
+* Ant Design of Angular: https://ng.ant.design
+* Ant Design Mobile of Angular: http://ng.mobile.ant.design
 
 ## 国内镜像
 
-* Ant Design: http://ant-design.gitee.io
-* Ant Design Pro: http://ant-design-pro.gitee.io
-* Ant Design Mobile: http://antd-mobile.gitee.io
-* Ant Motion: http://ant-motion.gitee.io
+* Ant Design of Angular: https://ng-zorro.gitee.io
+
       `;
 
       commentIssue({

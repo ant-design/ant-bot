@@ -56,7 +56,7 @@ const components = [
 
 function addComponentLabel(on) {
   on('issues_opened', ({ payload, repo }) => {
-    if (repo !== 'ant-design') {
+    if (repo !== 'ng-zorro-antd') {
       return;
     }
     const { issue } = payload;
