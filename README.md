@@ -1,5 +1,7 @@
 # Ant bot
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ant-design/ant-bot.svg)](https://greenkeeper.io/)
+
 ## Development
 
 ### start
