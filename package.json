@@ -8,6 +8,7 @@
     "dev": "NODE_ENV=development nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./app",
+    "prettier": "prettier -c --write **/*",
     "precommit": "lint-staged"
   },
   "lint-staged": {
