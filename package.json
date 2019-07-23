@@ -24,7 +24,7 @@
     "node": ">=8"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cryptiles": "^4.1.2",
     "dotenv": "^4.0.0",
     "duration-js": "^4.0.0",
