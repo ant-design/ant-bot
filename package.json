@@ -36,7 +36,7 @@
     "koa-router": "^7.2.1",
     "lodash": "^4.17.13",
     "raven": "^2.2.1",
-    "require-dir": "^0.3.2",
+    "require-dir": "^1.2.0",
     "string-template": "^1.0.0"
   },
   "devDependencies": {
