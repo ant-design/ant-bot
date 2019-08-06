@@ -28,7 +28,7 @@
     "cryptiles": "^4.1.2",
     "dotenv": "^8.0.0",
     "duration-js": "^4.0.0",
-    "github": "^9.2.0",
+    "github": "^14.0.0",
     "google-translate-api": "^2.3.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "4.2.1",
