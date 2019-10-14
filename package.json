@@ -30,7 +30,7 @@
     "duration-js": "^4.0.0",
     "github": "^9.2.0",
     "google-translate-api": "^2.3.0",
-    "koa": "^2.7.0",
+    "koa": "^2.10.0",
     "koa-bodyparser": "4.2.1",
     "koa-logger": "^3.2.1",
     "koa-router": "^7.2.1",
