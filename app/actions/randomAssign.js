@@ -2,7 +2,7 @@ const { addAssigneesToIssue } = require('../../lib/github');
 const { isIssueValid } = require('../../lib/utils');
 const { sample } = require('lodash');
 
-const maintainers = ['zombieJ', 'afc163', 'chenshuai2144', 'yesmeck', 'yutingzhao1991'];
+const maintainers = ['zombieJ', 'afc163', 'chenshuai2144', 'yutingzhao1991'];
 
 function randomAssign(on) {
   on('issues.opened', ({ payload, repo }) => {
