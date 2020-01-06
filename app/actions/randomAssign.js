@@ -14,6 +14,10 @@ function randomAssign(on) {
     if (issue && !isIssueValid(issue)) {
       return;
     }
+
+    // Not assign since currently not enough maintainer
+    return;
+
     addAssigneesToIssue({
       owner: payload.repository.owner.login,
       repo: payload.repository.name,
