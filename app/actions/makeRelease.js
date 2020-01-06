@@ -1,6 +1,12 @@
+/* eslint-disable no-await-in-loop */
 const axios = require('axios');
 const { getChangelog } = require('../../lib/utils');
 const { createRelease } = require('../../lib/github');
+
+const urls = [
+  'https://raw.githubusercontent.com/ant-design/ant-design/master/',
+  'https://raw.githubusercontent.com/ant-design/ant-design/3.x-stable/',
+];
 
 function makeRelease(on) {
   on('create', async ({ payload, repo }) => {
@@ -11,11 +17,19 @@ function makeRelease(on) {
       return;
     }
     const version = payload.ref;
-    const url = 'https://raw.githubusercontent.com/ant-design/ant-design/master/';
-    const enChangelogContent = await axios.get(`${url}/CHANGELOG.en-US.md`);
-    const enChangelog = getChangelog(enChangelogContent.data, version);
-    const cnChangelogContent = await axios.get(`${url}/CHANGELOG.zh-CN.md`);
-    const cnChangelog = getChangelog(cnChangelogContent.data, version);
+
+    let enChangelog = '';
+    let cnChangelog = '';
+
+    for (let i = 0; i < urls.length; i += 1) {
+      const url = urls[i];
+
+      const enChangelogContent = await axios.get(`${url}/CHANGELOG.en-US.md`);
+      enChangelog = enChangelog || getChangelog(enChangelogContent.data, version);
+      const cnChangelogContent = await axios.get(`${url}/CHANGELOG.zh-CN.md`);
+      cnChangelog = cnChangelog || getChangelog(cnChangelogContent.data, version);
+    }
+
     const changelog = [enChangelog, '\n', '---', '\n', cnChangelog].join('\n');
     createRelease({
       owner: payload.repository.owner.login,
@@ -41,3 +55,4 @@ function makeRelease(on) {
 }
 
 module.exports = makeRelease;
+/* eslint-enable */
