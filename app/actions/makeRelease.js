@@ -3,10 +3,7 @@ const axios = require('axios');
 const { getChangelog } = require('../../lib/utils');
 const { createRelease } = require('../../lib/github');
 
-const urls = [
-  'https://raw.githubusercontent.com/ant-design/ant-design/master/',
-  'https://raw.githubusercontent.com/ant-design/ant-design/3.x-stable/',
-];
+const branches = ['master', '3.x-stable'];
 
 function makeRelease(on) {
   on('create', async ({ payload, repo }) => {
@@ -21,8 +18,8 @@ function makeRelease(on) {
     let enChangelog = '';
     let cnChangelog = '';
 
-    for (let i = 0; i < urls.length; i += 1) {
-      const url = urls[i];
+    for (let i = 0; i < branches.length; i += 1) {
+      const url = `https://raw.githubusercontent.com/ant-design/ant-design/${branches[i]}/`;
 
       const enChangelogContent = await axios.get(`${url}/CHANGELOG.en-US.md`);
       enChangelog = enChangelog || getChangelog(enChangelogContent.data, version);
