@@ -2,6 +2,9 @@ const { addAssigneesToIssue } = require('../../lib/github');
 const { isIssueValid } = require('../../lib/utils');
 const { sample } = require('lodash');
 
+// Not assign since currently not enough maintainer
+const STOP_RANDOM_ASSIGN = true;
+
 const maintainers = ['zombieJ', 'afc163', 'chenshuai2144', 'yutingzhao1991'];
 
 function randomAssign(on) {
@@ -15,8 +18,9 @@ function randomAssign(on) {
       return;
     }
 
-    // Not assign since currently not enough maintainer
-    return;
+    if (STOP_RANDOM_ASSIGN) {
+      return;
+    }
 
     addAssigneesToIssue({
       owner: payload.repository.owner.login,
