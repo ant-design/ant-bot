@@ -3,6 +3,8 @@ const { commentIssue, closeIssue } = require('../../lib/github');
 const keyword1 = [
   '官网',
   '网站',
+  '国内',
+  '镜像',
   'mobile ant design',
   'mobile.ant.design',
   'ant design',
@@ -49,6 +51,9 @@ Ant Design 系列官网由于某些众所周知的原因无法访问，建议翻
 ## 国内镜像
 
 * Ant Design: http://ant-design.gitee.io
+* Ant Design 3.x: http://ant-design-3x.gitee.io
+* Ant Design 2.x: http://ant-design-2x.gitee.io
+* Ant Design 1.x: http://ant-design-1x.gitee.io
 * Ant Design Pro: http://ant-design-pro.gitee.io
 * Ant Design Mobile: http://antd-mobile.gitee.io
 * Ant Motion: http://ant-motion.gitee.io
