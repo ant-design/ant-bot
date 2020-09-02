@@ -15,7 +15,7 @@ function closeArchive(on) {
   on('pull_request.opened', ({ payload }) => {
     console.log('=>', JSON.stringify(payload));
 
-    if (['0.12-stable', '1.x-stable', '2.x-stable'].includes(payload.pull_request.base.ref)) {
+    if (['0.12-stable', '1.x-stable', '2.x-stable', '3.x-stable'].includes(payload.pull_request.base.ref)) {
       commentIssue({
         owner: payload.repository.owner.login,
         repo: payload.repository.name,
