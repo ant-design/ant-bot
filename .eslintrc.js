@@ -14,5 +14,6 @@ module.exports = {
     'no-console': 0,
     'prefer-destructuring': 0,
     'no-underscore-dangle': 0,
+    'function-paren-newline': 0,
   },
 };
