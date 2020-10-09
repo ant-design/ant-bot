@@ -31,7 +31,7 @@
     "github": "^9.2.0",
     "google-translate-api": "^2.3.0",
     "koa": "^2.7.0",
-    "koa-bodyparser": "4.2.1",
+    "koa-bodyparser": "4.3.0",
     "koa-logger": "^3.2.1",
     "koa-router": "^7.2.1",
     "lodash": "^4.17.13",
