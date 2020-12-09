@@ -13,7 +13,7 @@ or [Segment Fault](https://segmentfault.com/t/antd), then apply tag `antd` and \
 \n\
 你好 @{user}，Ant Design Issue 板块是用于 bug 反馈与需求讨论的地方。\
 请[勿询问如何使用的问题](https://github.com/ant-design/ant-design/issues/2320)，\
-你可以试着在 [antd discussions](https://github.com/ant-design/ant-design/discussions) 新开一个 discussion，选择 `Q&A` 进行提问，\
+你可以试着在 [antd discussions](https://github.com/ant-design/ant-design/discussions) 新开一个 discussion，选择 `Q&A` 类别进行提问，\
 也可以在 [Stack Overflow](http://stackoverflow.com/questions/tagged/antd) 或者 [Segment Fault](https://segmentfault.com/t/antd) \
 中提问（记得添加 `antd` 和 `react` 标签哦~）。\
 ";
