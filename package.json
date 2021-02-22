@@ -34,7 +34,7 @@
     "koa-bodyparser": "4.2.1",
     "koa-logger": "^3.2.1",
     "koa-router": "^7.2.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "raven": "^2.2.1",
     "require-dir": "^0.3.2",
     "string-template": "^1.0.0"
